@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>معرض أعمالي | Portfolio</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- أيقونات font-awesome -->
+    <link rel="stylesheet" href="https://cloudflare.com">
+</head>
+<body class="dark-theme">
+
+    <!-- الهيدر والقائمة -->
+    <header>
+        <div class="logo">مُطوّر ويب</div>
+        <div class="header-tools">
+            <div id="digital-clock" class="clock">00:00:00</div> 
+            <button id="theme-toggle" class="theme-btn"><i class="fas fa-sun"></i></button>
+        </div>
+        <nav>
+            <ul class="nav-links">
+                <li><a href="#hero" class="active">الرئيسية</a></li>
+                <li><a href="#projects">مشاريعي</a></li>
+                <li><a href="#about">عني</a></li>
+                <li><a href="#testimonials">الآراء</a></li>
+                <li><a href="#contact">اتصل بي</a></li>
+            </ul>
+            <div class="burger">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+        </nav>
+    </header>
+
+    <!-- القسم الرئيسي -->
+    <section id="hero" class="hero-section">
+        <div class="hero-container">
+            <div class="hero-image">
+                <img src="بروفايل.jpg" alt="صورتي الشخصية" id="profile-img">
+            </div>
+            <div class="hero-content">
+                <h1>مرحباً، أنا <span class="highlight">سلامه مجدي</span></h1>
+                <p>مطور واجهة أمامية (Front-End Developer) متخصص في بناء مواقع وتطبيقات ويب تفاعلية وسريعة.</p>
+                <div class="hero-btns">
+                    <a href="#projects" class="btn">تصفح أعمالي</a>
+                    <a href="cv.pdf" class="btn btn-outline" download><i class="fas fa-download"></i> تحميل الـ CV</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم المشاريع -->
+    <section id="projects" class="section">
+        <h2 class="section-title">أحدث مشاريعي</h2>
+        <div class="projects-grid">
+            
+            <!-- مشروع 1: المتجر الإلكتروني -->
+            <div class="project-card">
+                <div class="project-img">
+                    <div class="app-window shop-app">
+                        <div class="shop-header">
+                            <h4>celia store</h4>
+                            <div class="cart-icon"><i class="fas fa-shopping-cart"></i> <span id="cart-count">0</span></div>
+                        </div>
+                        <div class="shop-products">
+                            <div class="product-item"><h5>سماعة ذكية</h5><p>$45</p><button onclick="addToCart()">شراء</button></div>
+                            <div class="product-item"><h5>مصباح ليد</h5><p>$25</p><button onclick="addToCart()">شراء</button></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>متجر إلكتروني متكامل</h3>
+                    <p>تصميم متجر إلكتروني متجاوب مع سلة مشتريات تفاعلية تحسب عدد العناصر المضافة.</p>
+                    <div class="tags"><span>HTML</span><span>CSS</span><span>JS</span></div>
+                    <div class="project-actions">
+                        <a href="#" class="action-btn"><i class="fas fa-eye"></i> العرض الحي</a>
+                        <a href="#" class="action-btn"><i class="fab fa-github"></i> الكود</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- مشروع 2: تطبيق إدارة المهام -->
+            <div class="project-card">
+                <div class="project-img">
+                    <div class="app-window todo-app">
+                        <div class="todo-header"><h4>مهامي اليومية</h4></div>
+                        <div class="todo-body">
+                            <ul id="todo-list">
+                                <li><input type="checkbox" checked> مراجعة كود المشروع</li>
+                            </ul>
+                            <div class="todo-input">
+                                <input type="text" id="todo-text" placeholder="أضف مهمة...">
+                                <button onclick="addTodo()"><i class="fas fa-plus"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>تطبيق إدارة المهام</h3>
+                    <p>تطبيق لتنظيم المهام اليومية تفاعلي يمكنك من إضافة المهام وحذفها وشطب المكتمل منها.</p>
+                    <div class="tags"><span>JavaScript</span><span>CSS3</span></div>
+                    <div class="project-actions">
+                        <a href="#" class="action-btn"><i class="fas fa-eye"></i> العرض الحي</a>
+                        <a href="#" class="action-btn"><i class="fab fa-github"></i> الكود</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- مشروع 3: موقع حجز الفنادق -->
+            <div class="project-card">
+                <div class="project-img">
+                    <div class="app-window hotel-app">
+                        <div class="hotel-header"><h4>Luxor Stay</h4></div>
+                        <div class="hotel-search"><input type="text" id="hotel-input" placeholder="أين تريد الذهاب؟"><button onclick="searchHotel()">بحث</button></div>
+                        <div class="hotel-result" id="hotel-res"><p>اختر وجهتك وابحث عنها الآن.</p></div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>موقع حجز فنادق</h3>
+                    <p>واجهة محرك بحث سياحي مميزة تقوم بإظهار نتائج تفاعلية فور الضغط على زر البحث.</p>
+                    <div class="tags"><span>HTML5</span><span>Animations</span></div>
+                    <div class="project-actions">
+                        <a href="#" class="action-btn"><i class="fas fa-eye"></i> العرض الحي</a>
+                        <a href="#" class="action-btn"><i class="fab fa-github"></i> الكود</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- مشروع 4: مشغل الموسيقى -->
+            <div class="project-card">
+                <div class="project-img">
+                    <div class="app-window music-app">
+                        <div class="music-header"><h4>مشغل الموسيقى</h4></div>
+                        <div class="music-body">
+                            <div class="disc"><i class="fas fa-music"></i></div>
+                            <h5 id="song-title">الأغنية الأولى</h5>
+                            <div class="music-controls">
+                                <button onclick="prevSong()"><i class="fas fa-backward"></i></button>
+                                <button onclick="togglePlay()" id="play-btn"><i class="fas fa-play"></i></button>
+                                <button onclick="nextSong()"><i class="fas fa-forward"></i></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>تطبيق مشغل صوتيات</h3>
+                    <p>واجهة مشغل موسيقى تفاعلي يتيح تغيير الأغاني وتشغيلها مع إضافة حركة دوران القرص.</p>
+                    <div class="tags"><span>CSS Grid</span><span>Audio JS</span></div>
+                    <div class="project-actions">
+                        <a href="#" class="action-btn"><i class="fas fa-eye"></i> العرض الحي</a>
+                        <a href="#" class="action-btn"><i class="fab fa-github"></i> الكود</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- مشروع 5: حاسبة المصاريف -->
+            <div class="project-card">
+                <div class="project-img">
+                    <div class="app-window expense-app">
+                        <div class="expense-header"><h4>مدير المصاريف</h4></div>
+                        <div class="expense-body">
+                            <div class="balance">المتبقي: <span id="balance-val">$1000</span></div>
+                            <div class="expense-inputs">
+                                <input type="number" id="exp-amount" placeholder="المبلغ">
+                                <button onclick="addExpense()">خصم</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>حاسبة مالية للمصاريف</h3>
+                    <p>تطبيق لحساب ميزانيتك المالية المتبقية بعد خصم أي مدفوعات تجريها بشكل فوري.</p>
+                    <div class="tags"><span>Logic JS</span><span>Forms</span></div>
+                    <div class="project-actions">
+                        <a href="#" class="action-btn"><i class="fas fa-eye"></i> العرض الحي</a>
+                        <a href="#" class="action-btn"><i class="fab fa-github"></i> الكود</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- مشروع 6: تطبيق الطقس -->
+            <div class="project-card">
+                <div class="project-img">
+                    <div class="app-window weather-app">
+                        <div class="weather-header"><h4>تطبيق الطقس</h4></div>
+                        <div class="weather-body">
+                            <select id="city-select" onchange="getWeather()">
+                                <option value="القاهرة">القاهرة</option>
+                                <option value="الرياض">الرياض</option>
+                                <option value="دبي">دبي</option>
+                            </select>
+                            <div id="weather-info" class="weather-info">
+                                <i class="fas fa-sun"></i> 25°C
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>أداة استعلام الطقس</h3>
+                    <p>تطبيق صغير يعرض درجات حرارة مختلفة وحالة الجو بمجرد تغيير المدينة المحددة.</p>
+                    <div class="tags"><span>API Simulation</span><span>Events</span></div>
+                    <div class="project-actions">
+                        <a href="#" class="action-btn"><i class="fas fa-eye"></i> العرض الحي</a>
+                        <a href="#" class="action-btn"><i class="fab fa-github"></i> الكود</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- مشروع 7: لعبة الذاكرة -->
+            <div class="project-card">
+                <div class="project-img">
+                    <div class="app-window game-app">
+                        <div class="game-header"><h4>لعبة الذاكرة</h4></div>
+                        <div class="game-body">
+                            <div class="memory-grid">
+                                <div class="memory-card" onclick="flipCard(this, '🚀')">❓</div>
+                                <div class="memory-card" onclick="flipCard(this, '⭐')">❓</div>
+                                <div class="memory-card" onclick="flipCard(this, '🚀')">❓</div>
+                                <div class="memory-card" onclick="flipCard(this, '⭐')">❓</div>
+                            </div>
+                            <p id="game-status">اعثر على الأزواج المتشابهة!</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>لعبة الذاكرة المصغرة</h3>
+                    <p>لعبة كلاسيكية لاختبار الذاكرة تم بناؤها بالكامل باستخدام الجافاسكريبت للتحكم بالبطاقات.</p>
+                    <div class="tags"><span>Game Dev</span><span>DOM</span></div>
+                    <div class="project-actions">
+                        <a href="#" class="action-btn"><i class="fas fa-eye"></i> العرض الحي</a>
+                        <a href="#" class="action-btn"><i class="fab fa-github"></i> الكود</a>
+                    </div>
+                </div>
+            </div>
+
+            <!-- مشروع 8: مولد الألوان -->
+            <div class="project-card">
+                <div class="project-img">
+                    <div class="app-window color-app">
+                        <div class="color-header"><h4>مولد الألوان</h4></div>
+                        <div class="color-body" id="color-box" style="background-color: #38bdf8;">
+                            <div class="color-info">
+                                <span id="color-hex">#38bdf8</span>
+                                <button onclick="generateColor()">توليد لون</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-info">
+                    <h3>مولد ألوان عشوائي</h3>
+                    <p>أداة تتيح للمصممين إنتاج أكواد ألوان HEX عشوائية بضغطة زر وتطبيقها كلون خلفية.</p>
+                    <div class="tags"><span>Random JS</span><span>Colors</span></div>
+                    <div class="project-actions">
+                        <a href="#" class="action-btn"><i class="fas fa-eye"></i> العرض الحي</a>
+                        <a href="#" class="action-btn"><i class="fab fa-github"></i> الكود</a>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- قسم عني -->
+    <section id="about" class="section bg-light">
+        <h2 class="section-title">من أنا؟</h2>
+        <div class="about-container">
+            <div class="about-text">
+                <p>أنا مطور ويب شغوف بتحويل الأفكار المعقدة إلى تصميمات بسيطة وتفاعلية. أركز دائماً على تجربة المستخدم (UX) وكتابة كود نظيف وقابل للتطوير.</p>
+                <div class="skills">
+                    <span class="skill-item">HTML5</span><span class="skill-item">CSS3</span><span class="skill-item">JavaScript</span><span class="skill-item">Responsive Design</span><span class="skill-item">Git & GitHub</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- قسم آراء العملاء (جديد) -->
+    <section id="testimonials" class="section">
+        <h2 class="section-title">ماذا يقول العملاء عني؟</h2>
+        <div class="testimonials-grid">
+            
+            <div class="testimonial-card">
+                <div class="test-img">
+                    <img src="متجر رقمي.jpeg" alt="عميل">
+                </div>
+                <p>"أحمد مطور محترف جداً، قام ببرمجة متجرنا الإلكتروني بسرعة واحترافية تفوق التوقعات!"</p>
+                <h4>محمد علي</h4>
+                <span>صاحب متجر رقمي</span>
+            </div>
+
+            <div class="testimonial-card">
+                <div class="test-img">
+                    <img src="woman-marketing-477973067.jpg" alt="عميل">
+                </div>
+                <p>"كود نظيف جداً وتصميم متجاوب تماماً مع الموبايل، شكراً على مجهودك الرائع وسرعة تسليم العمل."</p>
+                <h4>سارة أحمد</h4>
+                <span>مديرة مشاريع</span>
+            </div>
+
+        </div>
+    </section>
+
+    <!-- قسم الاتصال -->
+    <section id="contact" class="section bg-light">
+        <h2 class="section-title">تواصل معي</h2>
+        <div class="contact-container">
+            <form id="contact-form" class="contact-form">
+                <div class="form-group"><label for="name">الاسم</label><input type="text" id="name" required></div>
+                <div class="form-group"><label for="email">البريد الإلكتروني</label><input type="email" id="email" required></div>
+                <div class="form-group"><label for="message">الرسالة</label><textarea id="message" rows="5" required></textarea></div>
+                <button type="submit" class="btn">إرسال الرسالة</button>
+            </form>
+        </div>
+    </section>
+
+    <!-- زر العودة للأعلى 👇 -->
+    <button id="back-to-top" class="back-to-top" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- 3. الـ Footer: يحتوي على حقوق النشر وروابط التواصل -->
+    <footer>
+        <p>جميع الحقوق محفوظة © 2026</p>
+          <p>Designed by  <span class="designer-name">Salama Magdy</span></p>
+        <p></p>
+        <div class="social-links">
+            <a href="https://www.linkedin.com/in/abo-celia-a0660a404/">LinkedIn</a>
+            <a href="https://github.com/magdysa78-svg">GitHub</a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
