@@ -48,7 +48,8 @@
 
 1. قم بتحميل الملفات أو عمل `clone` للمستودع.
 2. افتح ملف `index.html` في أي متصفح (Chrome, Edge, Safari...) وسيعمل معك المشروع فوراً بكل خصائصه!
-3.لينك الموقع النهائي 
+ 
+3.لينك الموقع النهائي https://magdysa78-svg.github.io/final---project-/ 
 ---
 
 ## 🤝 تواصل معي | Connect with Me
